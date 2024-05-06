@@ -1,0 +1,37 @@
+<div class="sidenav_component">
+  <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav mode="side" opened>
+        <div class="h_100">
+          <h1 class="task_title">Task</h1>
+          <div class="add_task">
+            <button mat-raised-button color="primary" class="add-task-button">Add Task</button>
+          </div>
+    
+          <div class="list_items">
+            <div>
+              <p class="task_font">- Item 1</p>
+            </div>
+            <div class="action_button">
+              <!-- <button mat-raised-button color="accent" (click)="editTask()">
+                Edit
+              </button> -->
+              <button mat-icon-button aria-label="Edit" class="cursor-pointer">
+                <mat-icon class="edit">edit</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="Delete" class="cursor-pointer">
+                <mat-icon class="edit">delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <hr/>
+        </div>
+
+       
+           
+   
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

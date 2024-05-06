@@ -1,0 +1,51 @@
+.mat_list_class {
+    height: 100vh;
+    // position: relative;
+}
+.task_font {
+    font-weight: bold;
+    font-size: 21px;
+    margin: 24px 0 12px 9px;
+
+
+}
+.edit {
+    // position: absolute;
+    // top: 4px;
+}
+.delete {
+    // position: absolute;
+    // top: 4px;
+  
+}
+.cursor-pointer {
+    cursor: pointer;
+  }
+.action_button {
+//    position: absolute;
+//    right: 4px;
+//    top: 4px;
+    position: relative;
+    right: 10px
+}
+.ml {
+    margin-left: 8px;
+}
+.h_100 {
+    height: 97vh;
+}
+.list_items {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 16px;
+    align-items: center;
+}
+.task_title {
+    text-align: center;
+    margin-top: 16px;
+}
+.add_task {
+    display: flex;
+    justify-content: center;
+}

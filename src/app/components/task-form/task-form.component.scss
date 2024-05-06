@@ -1,0 +1,52 @@
+.task_form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 24px;
+    // height: 70vh;
+}
+.add-task-button {
+    margin-left: 8px;
+}
+.add_task_title {
+    font-weight: bold;
+}
+.margin_top {
+  margin-top: 16px;  
+}
+.child_3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.child_3_inner {
+    width: 50%;
+}
+.details {
+    font-weight: bold;
+    font-size: 14px;
+}
+.details_parent {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form_div {
+    display: flex;
+    gap: 18px;
+}
+.child_2_child {
+    display: flex;
+    gap: 18px;
+    width: 100% !important;
+}
+.weekly_fields {
+    display: flex;
+    flex-direction: column;
+}
+.one_field {
+    width: 100%;
+}
