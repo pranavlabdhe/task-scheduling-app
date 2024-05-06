@@ -1,30 +1,15 @@
 .mat_list_class {
     height: 100vh;
-    // position: relative;
 }
 .task_font {
     font-weight: bold;
     font-size: 21px;
     margin: 24px 0 12px 9px;
-
-
-}
-.edit {
-    // position: absolute;
-    // top: 4px;
-}
-.delete {
-    // position: absolute;
-    // top: 4px;
-  
 }
 .cursor-pointer {
     cursor: pointer;
   }
 .action_button {
-//    position: absolute;
-//    right: 4px;
-//    top: 4px;
     position: relative;
     right: 10px
 }
@@ -33,6 +18,7 @@
 }
 .h_100 {
     height: 97vh;
+    position: relative;
 }
 .list_items {
     display: flex;
@@ -49,3 +35,34 @@
     display: flex;
     justify-content: center;
 }
+.close_nav {
+    display: none;
+}
+
+@media screen and (max-width:420px) {
+    .h_100 {
+        height: 97vh;
+        position: relative;
+    }
+    .close_nav {
+        position: absolute;
+        right: 9px;
+        cursor: pointer;
+        display: block;
+    }
+}
+@media screen and (max-width:960px) {
+    .h_100 {
+        height: 97vh;
+        position: relative;
+    }
+    .close_nav {
+        position: absolute;
+        right: 9px;
+        cursor: pointer;
+        display: block;
+    }
+}
+
+
+// close_nav

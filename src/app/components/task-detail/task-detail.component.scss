@@ -1,0 +1,21 @@
+.child_3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.child_3_inner {
+    width: 90%;
+}
+.details {
+    font-weight: bold;
+    font-size: 14px;
+}
+.details_parent {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.child_3_inner_1 {
+    display: flex;
+    justify-content: center;
+}

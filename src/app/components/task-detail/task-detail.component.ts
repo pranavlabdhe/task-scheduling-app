@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-detail.component.scss']
 })
 export class TaskDetailComponent {
-
+  panelOpenState = false;
 }

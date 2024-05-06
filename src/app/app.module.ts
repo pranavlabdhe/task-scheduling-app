@@ -20,12 +20,16 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonServiceService } from './Services/common-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    MainViewComponent,
     SideBarComponent,
     TaskFormComponent,
+    TaskDetailComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     NgxMaterialTimepickerModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [
+    BreakpointObserver,
+    CommonServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

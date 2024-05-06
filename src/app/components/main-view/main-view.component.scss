@@ -1,0 +1,13 @@
+
+.close_ham {
+    display: block;
+}
+@media screen and (min-width:960px) {
+    .close_ham {
+        position: absolute;
+        right: 9px;
+        cursor: pointer;
+        display: none;
+    }
+}
+

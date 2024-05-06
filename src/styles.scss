@@ -1,24 +1,42 @@
-body{
+body {
     margin: 0px;
 }
+
 .sidenav_component .mat-sidenav-container {
     height: 100vh !important;
 }
+
 .main_view {
     width: 100% !important;
 }
+
 .sidenav_component .mat-sidenav {
     width: 256px !important;
 }
+
 .main_view {
     width: 100% !important;
 }
+
 .task_form .mat-sidenav-content {
     width: 100% !important;
 }
+
 .mat_list_class .mdc-list-item.mdc-list-item--with-one-line {
     height: 64px;
 }
+
 .mat_list_class.mat-mdc-list-non-interactive .mdc-list-item {
     cursor: pointer !important;
+}
+
+@media screen and (max-width:420px) {
+    .sidenav_component .mat-sidenav {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width:960px) {
+    .sidenav_component .mat-sidenav {
+        width: 100% !important;
+    }
 }
