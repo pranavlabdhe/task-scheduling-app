@@ -1,0 +1,145 @@
+<div class="task_form">
+  <div class="child_1">
+    <h3 class="add_task_title">Add Task</h3>
+  </div>
+  <form class="">
+    <div class="child_2" style="width: 100%;">
+      <div class="form_div">
+  
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Task Name" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field  class="margin_left">
+          <mat-select placeholder="Frequency" [(ngModel)]="task.frequency" name="frequency">
+            <mat-option value="hourly">Hourly </mat-option>
+            <mat-option value="daily">Daily</mat-option>
+            <mat-option value="weekly"  (click)="openWeeklyDialog()">Weekly</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+     </div>
+     
+  </div>
+  <div class="child_2_child" >
+    <div *ngIf="task.frequency === 'hourly'" class="one_field">
+      <!-- <mat-form-field appearance="fill" class="one_field">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field> -->
+      <mat-form-field appearance="fill" class="one_field">
+        <mat-label>Choose start date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div> 
+
+    <div *ngIf="task.frequency === 'daily'" class="one_field">
+      <mat-form-field appearance="fill" class="one_field">
+        <mat-label>Choose start date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <!-- <div *ngIf="task.frequency === 'weekly'" class="weekly_fields one_field">
+      <mat-form-field class="margin_left">
+        <mat-label>Choose days of the week</mat-label>
+        <mat-select multiple [(ngModel)]="task.weeklyFrequency" name="weeklyFrequency">
+          <mat-option *ngFor="let day of weekdays" [value]="day">{{ day }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div> -->
+    <div *ngIf="task.frequency === 'weekly'">
+      <div *ngIf="selectedWeeklyData">
+        <p>Option: {{ selectedWeeklyData.option }}</p>
+        <p>Start Date: {{ selectedWeeklyData.startDate | date }}</p>
+        <ng-container *ngIf="selectedWeeklyData.endDate">
+          <p>End Date: {{ selectedWeeklyData.endDate | date }}</p>
+        </ng-container>
+        <ng-container *ngIf="selectedWeeklyData.daysOfWeek && selectedWeeklyData.daysOfWeek.length > 0">
+          <p>Days of Week: {{ selectedWeeklyData.daysOfWeek.join(', ') }}</p>
+        </ng-container>
+      </div>
+    </div>
+  
+    
+
+  </div>
+  <div class="time_field one_field">
+    <mat-form-field class="one_field">
+      <input matInput placeholder="Choose Time"[ngxTimepicker]="picker3" required>
+      <ngx-material-timepicker #picker3></ngx-material-timepicker>
+    </mat-form-field>
+  </div>
+  <div class="margin_top">
+    <button mat-raised-button class="add-task-button" color="primary" (click)="onSubmit()">Add</button>
+  </div>
+</form>
+  </div>
+  <p>should appear when edit icon is clicked</p>
+  <!-- <div class="child_3">
+    <div class="child_3_inner">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+Details
+</mat-panel-title>
+</mat-expansion-panel-header>
+<div class="details_parent">
+  <div>
+    <span class="details">Task Name</span> : <span>Coding</span>
+  </div>
+  <div>
+    <span class="details">Frequency</span> : <span>Daily</span>
+  </div>
+  <div>
+    <span class="details">Start Date</span> : <span>00/00/0000</span>
+  </div>
+  <div>
+    <span class="details">End Date</span> : <span>00/00/0000</span>
+  </div>
+  <div>
+    <span class="details">Start Time</span> : <span>10:10 am</span>
+  </div>
+  <div>
+    <span class="details">End Time</span> : <span>11:10 am</span>
+  </div>
+  <div>
+    <span class="details">Description</span> : <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, explicabo?</span>
+  </div>
+</div>
+
+
+
+</mat-expansion-panel>
+    </div>
+
+  </div> -->
+
+<div class="child_3">
+<app-task-detail></app-task-detail>
+</div>

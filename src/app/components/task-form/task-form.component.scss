@@ -37,6 +37,8 @@
 .form_div {
     display: flex;
     gap: 18px;
+    width: 100%;
+    flex-direction: column;
 }
 .child_2_child {
     display: flex;
@@ -55,4 +57,7 @@
     .form_div {
       flex-direction: column;
     }
+}
+.one_field_parent {
+    width: 90%;
 }

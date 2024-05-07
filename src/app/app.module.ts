@@ -12,24 +12,31 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import {MatSelectModule} from '@angular/material/select';
-import { TaskFormComponent } from './components/task-form/task-form.component';
+import { MY_FORMATS, TaskFormComponent } from './components/task-form/task-form.component';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_FORMATS, MatNativeDateModule } from '@angular/material/core';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonServiceService } from './Services/common-service.service';
-
+import { WeeklyDialogComponent } from './dialogs/weekly-dialog/weekly-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
     TaskFormComponent,
     TaskDetailComponent,
-    MainViewComponent
+    MainViewComponent,
+    WeeklyDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -47,11 +54,18 @@ import { CommonServiceService } from './Services/common-service.service';
     MatDatepickerModule,
     MatNativeDateModule,
     NgxMaterialTimepickerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    AngularEditorModule,
+    HttpClientModule
   ],
   providers: [
     BreakpointObserver,
-    CommonServiceService
+    CommonServiceService,
+    DatePipe,
+    {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS}
   ],
   bootstrap: [AppComponent]
 })

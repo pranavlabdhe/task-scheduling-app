@@ -2,81 +2,106 @@
   <div class="child_1">
     <h3 class="add_task_title">Add Task</h3>
   </div>
-  <form class="">
-    <div class="child_2" style="width: 100%;">
-      <div class="form_div">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class="task_form">
+      <div class="child_1">
+        <h3 class="add_task_title">Add Task</h3>
+      </div>
+      <div class="child_2 one_field_parent">
+        <div class="form_div">
+          <div>
+            <mat-form-field class="one_field">
+              <input matInput formControlName="taskName" placeholder="Task Name" required>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="margin_left one_field" >
+              <mat-select formControlName="frequency" placeholder="Frequency">
+                <mat-option value="hourly">Hourly</mat-option>
+                <mat-option value="daily">Daily</mat-option>
+                <mat-option value="weekly" (click)="openWeeklyDialog()">Weekly</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="child_2_child"  class="one_field_parent">
+        <div *ngIf="taskForm.get('frequency')?.value === 'hourly'" class="one_field">
+          <mat-form-field appearance="fill" class="one_field">
+            <mat-label>Choose start date</mat-label>
+            <input matInput formControlName="startDate" [matDatepicker]="picker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div *ngIf="taskForm.get('frequency')?.value === 'daily'" class="one_field">
+          <mat-form-field appearance="fill" class="one_field">
+            <mat-label>Choose start date</mat-label>
+            <input matInput formControlName="startDate" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <!-- <div *ngIf="taskForm.get('frequency')?.value === 'weekly'" class="weekly_fields one_field">
+          <mat-form-field class="margin_left">
+            <mat-label>Choose days of the week</mat-label>
+            <mat-select formControlName="daysOfWeek" multiple>
+              <mat-option *ngFor="let day of weekdays" [value]="day">{{ day }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date">
+              <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div> -->
+        <div *ngIf="taskForm.get('frequency')?.value === 'weekly'">
+          <div *ngIf="selectedWeeklyData">
+            <p>Option: {{ selectedWeeklyData.option }}</p>
+            <p>Start Date: {{ formatDateString(selectedWeeklyData.startDate) }}</p>
+            <ng-container *ngIf="selectedWeeklyData.endDate">
+              <p>End Date: {{ formatDateString(selectedWeeklyData.endDate) }}</p>
+            </ng-container>
+            <ng-container *ngIf="selectedWeeklyData.daysOfWeek && selectedWeeklyData.daysOfWeek.length > 0">
+              <p>Days of Week: {{ selectedWeeklyData.daysOfWeek.join(', ') }}</p>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="one_field_parent">
+        <div class="time_field one_field">
+          <mat-form-field class="one_field">
+            <input matInput formControlName="startTime" placeholder="Choose Start Time" [ngxTimepicker]="picker3" required>
+            <ngx-material-timepicker #picker3></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+        <div class="time_field one_field">
+          <mat-form-field class="one_field">
+            <input matInput formControlName="endTime" placeholder="Choose End Time" [ngxTimepicker]="picker4" required>
+            <ngx-material-timepicker #picker4></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="one_field_parent">
+      <div class="editor_field one_field">
+        <angular-editor formControlName="description" [config]="editorConfig"></angular-editor>
+      </div>
+    </div>
+      <div class="margin_top">
+        <button mat-raised-button class="add-task-button" color="primary" type="submit">Add</button>
+      </div>
+    </div>
+  </form>
   
-      <div>
-        <mat-form-field>
-          <input matInput placeholder="Task Name" required>
-        </mat-form-field>
-      </div>
-
-      <div>
-        <mat-form-field  class="margin_left">
-          <mat-select placeholder="Frequency" [(ngModel)]="task.frequency" name="frequency">
-            <mat-option value="hourly">Hourly </mat-option>
-            <mat-option value="daily">Daily</mat-option>
-            <mat-option value="weekly">Weekly</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-     </div>
-     
   </div>
-  <div class="child_2_child" >
-    <div *ngIf="task.frequency === 'hourly'" class="one_field">
-      <mat-form-field appearance="fill" class="one_field">
-        <mat-label>Enter a date range</mat-label>
-        <mat-date-range-input [rangePicker]="picker">
-          <input matStartDate placeholder="Start date">
-          <input matEndDate placeholder="End date">
-        </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </mat-form-field>
-    </div> 
-
-    <div *ngIf="task.frequency === 'daily'" class="one_field">
-      <mat-form-field appearance="fill" class="one_field">
-        <mat-label>Choose start date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    </div>
-    <div *ngIf="task.frequency === 'weekly'" class="weekly_fields one_field">
-      <mat-form-field class="margin_left">
-        <mat-label>Choose days of the week</mat-label>
-        <mat-select multiple [(ngModel)]="task.weeklyFrequency" name="weeklyFrequency">
-          <mat-option *ngFor="let day of weekdays" [value]="day">{{ day }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Enter a date range</mat-label>
-        <mat-date-range-input [rangePicker]="picker">
-          <input matStartDate placeholder="Start date">
-          <input matEndDate placeholder="End date">
-        </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="time_field one_field">
-    <mat-form-field class="one_field">
-      <input matInput placeholder="Choose Time"[ngxTimepicker]="picker3" required>
-      <ngx-material-timepicker #picker3></ngx-material-timepicker>
-    </mat-form-field>
-  </div>
-  <div class="margin_top">
-    <button mat-raised-button class="add-task-button" color="primary">Add</button>
-  </div>
-</form>
-  </div>
+ 
   <p>should appear when edit icon is clicked</p>
   <!-- <div class="child_3">
     <div class="child_3_inner">
