@@ -6,7 +6,7 @@
           <div *ngIf="todaysTasks.length > 0">
             <h1 class="task_title">Today's Task</h1>
           </div>
-          <h4 class="date_text">{{ currentDate | date: 'd MMMM yyyy' }}</h4>
+          <h4 class="date_text mt-4">{{ currentDate | date: 'd MMMM yyyy' }}</h4>
           <div class="add_task">
             <button [routerLink]="'/main-view/task-form'" mat-raised-button color="primary" class="add-task-button">Add Task</button>
           </div>
