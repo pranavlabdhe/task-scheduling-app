@@ -1,0 +1,66 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {  FullCalendarComponent } from '@fullcalendar/angular';
+import { CalendarOptions } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+
+@Component({
+  selector: 'app-list-all-tasks',
+  templateUrl: './list-all-tasks.component.html',
+  styleUrls: ['./list-all-tasks.component.scss']
+})
+export class ListAllTasksComponent implements OnInit {
+  @ViewChild('fullcalendar') fullcalendar!: FullCalendarComponent;
+  calendarOptions!: CalendarOptions;
+
+  ngOnInit() {
+    const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+
+    // Map tasks to FullCalendar events format
+    const events = tasks.map((task: any) => {
+      if (task.frequency === 'hourly') {
+        const timeRange = `${task.startTime}-${task.endTime}`;
+        return {
+          title: `${task.taskName} ${timeRange}`,
+          start: task.startDate,
+          end: task.endDate,
+          description: task.description,
+          extendedProps: {
+            status: task.status
+          }
+        };
+      } else if (task.frequency === 'weekly' && task.selectedWeeklyData) {
+        const daysOfWeek = task.selectedWeeklyData.daysOfWeek.map((day: string) => {
+          return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].indexOf(day);
+        });
+
+        return {
+          title: `${task.taskName} ${task.startTime}-${task.endTime}`,
+          daysOfWeek: daysOfWeek,
+          startRecur: task.selectedWeeklyData.startDate,
+          endRecur: task.selectedWeeklyData.endDate,
+          description: task.description,
+          extendedProps: {
+            status: task.status
+          }
+        };
+      } else {
+        return null;
+      }
+    }).filter((event: any) => event !== null);
+
+    this.calendarOptions = {
+      plugins: [dayGridPlugin],
+      initialView: 'dayGridMonth',
+      events: events,
+      eventContent: this.customizeEventContent // Custom event content callback
+    };
+  }
+
+  // Custom event content callback
+  customizeEventContent(arg: any) {
+    const eventEl = document.createElement('div');
+    eventEl.innerHTML = arg.event.title;
+    eventEl.style.fontSize = '10px'; // Adjust the font size as needed
+    return { domNodes: [eventEl] };
+  }
+}

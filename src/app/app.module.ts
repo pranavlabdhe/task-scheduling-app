@@ -29,6 +29,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule} from '@angular/common/http';
+import { FormGroupDirective } from '@angular/forms';
+import { ListAllTasksComponent } from './components/list-all-tasks/list-all-tasks.component';
+import {MatCardModule} from '@angular/material/card';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { TaskdetailsdialogcomponentComponent } from './dialogs/taskdetailsdialogcomponent/taskdetailsdialogcomponent.component';
+import { EditTaskFormComponent } from './components/edit-task-form/edit-task-form.component'; 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { SearchedTaskDetailsComponent } from './dialogs/searched-task-details/searched-task-details.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +48,13 @@ import { HttpClientModule} from '@angular/common/http';
     TaskFormComponent,
     TaskDetailComponent,
     MainViewComponent,
-    WeeklyDialogComponent
+    WeeklyDialogComponent,
+    ListAllTasksComponent,
+    TaskdetailsdialogcomponentComponent,
+    EditTaskFormComponent,
+    SearchedTaskDetailsComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,12 +77,17 @@ import { HttpClientModule} from '@angular/common/http';
     MatRadioModule,
     ReactiveFormsModule,
     AngularEditorModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    FullCalendarModule,
+    MatToolbarModule,
+    MatAutocompleteModule
   ],
   providers: [
     BreakpointObserver,
     CommonServiceService,
     DatePipe,
+    FormGroupDirective,
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS}
   ],
   bootstrap: [AppComponent]

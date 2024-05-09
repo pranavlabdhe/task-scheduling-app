@@ -1,7 +1,7 @@
-<div class="main_view" class="main_view" >
-    
-    <!-- <button mat-button (click)="openSidenav()">Open Sidenav</button> -->
+<div class="main_view">
     <mat-icon class="close_ham" (click)="toggleSidenav()">menu</mat-icon>
-
-    <app-task-form></app-task-form>
+    
+    <app-list-all-tasks *ngIf="isTasksRouteActive()"></app-list-all-tasks> 
+    <app-task-form *ngIf="isTaskFormRouteActive()"></app-task-form>
+    <app-edit-task-form *ngIf="isEditTaskFormRouteActive()" ></app-edit-task-form>
 </div>

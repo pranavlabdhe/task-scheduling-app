@@ -1,7 +1,6 @@
-
-
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-weekly-dialog',
@@ -12,12 +11,12 @@ export class WeeklyDialogComponent {
   @Output() dialogClosed = new EventEmitter<any>();
   weeklyForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.weeklyForm = this.fb.group({
-      option: ['never', Validators.required],
-      startDate: [null],
-      endDate: [null],
-      daysOfWeek: [[]]
+      option: [data.selectedWeeklyData.option, Validators.required],
+      startDate: [data.selectedWeeklyData.startDate],
+      endDate: [data.selectedWeeklyData.endDate],
+      daysOfWeek: [data.selectedWeeklyData.daysOfWeek]
     });
   }
 
@@ -28,5 +27,4 @@ export class WeeklyDialogComponent {
     }
     this.dialogClosed.emit(this.weeklyForm.value);
   }
-  
 }

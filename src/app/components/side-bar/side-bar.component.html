@@ -3,27 +3,17 @@
       <mat-sidenav #sidenav mode="side" opened>
         <div class="h_100">
           <mat-icon class="close_nav" (click)="closeSideNav()">clear</mat-icon>
-          <h1 class="task_title">Task</h1>
-
-          <!-- <button mat-button (click)="closeSideNav()">Close Sidenav</button> -->
+          <h1 class="task_title">Today's Task</h1>
+          <h4 class="date_text">{{ currentDate | date: 'd MMMM yyyy' }}</h4>
           <div class="add_task">
-            <button mat-raised-button color="primary" class="add-task-button">Add Task</button>
+            <button [routerLink]="'/main-view/task-form'" mat-raised-button color="primary" class="add-task-button">Add Task</button>
           </div>
-    
           <div class="list_items">
-            <div>
-              <p class="task_font">- Item 1</p>
-            </div>
-            <div class="action_button">
-              <button mat-icon-button aria-label="Edit" class="cursor-pointer">
-                <mat-icon class="edit">edit</mat-icon>
-              </button>
-              <button mat-icon-button aria-label="Delete" class="cursor-pointer">
-                <mat-icon class="edit">delete</mat-icon>
-              </button>
+            <div *ngFor="let task of todaysTasks" class="list_items_inner">
+              <p class="task_font"> - {{ task.taskName }}</p>
+              <hr/>
             </div>
           </div>
-          <hr/>
         </div>
       </mat-sidenav>
       <mat-sidenav-content>

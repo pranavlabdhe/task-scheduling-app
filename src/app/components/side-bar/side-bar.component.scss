@@ -25,7 +25,8 @@
     width: 100%;
     justify-content: space-between;
     margin-top: 16px;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
 }
 .task_title {
     text-align: center;
@@ -38,7 +39,13 @@
 .close_nav {
     display: none;
 }
-
+.list_items_inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
 @media screen and (max-width:420px) {
     .h_100 {
         height: 97vh;
@@ -63,6 +70,8 @@
         display: block;
     }
 }
-
+.date_text {
+    text-align: center;
+}
 
 // close_nav

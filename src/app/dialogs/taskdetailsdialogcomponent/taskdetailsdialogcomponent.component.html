@@ -1,0 +1,29 @@
+<div class="task_detail_div">
+    <div>
+      <h1 class="task_detail_div_text" mat-dialog-title>Task Details</h1>
+    </div>
+    <div class="task_detail_div_inner">
+      <div class="action_button">
+        <button mat-icon-button aria-label="Edit" class="cursor-pointer" (click)="onEditClick()">
+          <mat-icon class="edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Delete" class="cursor-pointer" (click)="onDeleteClick()">
+          <mat-icon class="edit">delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-content>
+    <p><strong>Name:</strong> {{ task.taskName }}</p>
+    <p><strong>Start Time:</strong> {{ task.startTime }}</p>
+    <p><strong>End Time:</strong> {{ task.endTime }}</p>
+    <p><strong>Status:</strong> {{ task.status }}</p>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+    <p><strong>Task type:</strong> {{ task.frequency }}</p>
+
+    <p *ngIf="isRecurringWeekly()"><strong>Recurring:</strong> {{ getRecurringDaysOfWeek() }}</p>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+  

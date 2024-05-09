@@ -1,0 +1,44 @@
+<!-- <div class="weekly_dialogs_inputs">
+<form [formGroup]="weeklyForm">
+    <mat-radio-group formControlName="option">
+      <mat-radio-button value="never">Never</mat-radio-button>
+      <mat-radio-button value="ends">Ends</mat-radio-button>
+    </mat-radio-group>
+    <div class="weekly_dialogs_form_fields">
+    <div>
+    <mat-form-field *ngIf="weeklyForm.get('option')?.value === 'never'" style="width: 100%;">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="startDatePicker" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #startDatePicker></mat-datepicker>
+    </mat-form-field>
+</div>
+    <mat-form-field *ngIf="weeklyForm.get('option')?.value === 'ends'" style="width: 100%;">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="startDatePicker" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #startDatePicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field *ngIf="weeklyForm.get('option')?.value === 'ends'" style="width: 100%;">
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="endDatePicker" formControlName="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #endDatePicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field *ngIf="weeklyForm.get('option')?.value === 'ends'" style="width: 100%;">
+      <mat-label>Choose Days of the Week</mat-label>
+      <mat-select multiple formControlName="daysOfWeek">
+        <mat-option *ngFor="let day of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']" [value]="day">{{ day }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+  </form>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="'close'" (click)="closeDialog()" [disabled]="weeklyForm.invalid" cdkFocusInitial>Done</button>
+  </mat-dialog-actions>
+</div>
+
+   -->

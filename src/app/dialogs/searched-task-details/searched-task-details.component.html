@@ -1,0 +1,23 @@
+<!-- searched-task-details.component.html -->
+<div class="task_detail_div">
+    <div>
+      <h1 class="task_detail_div_text" mat-dialog-title>Task Details</h1>
+    </div>
+  </div>
+  <div mat-dialog-content>
+    <p><strong>Name:</strong> {{ data.task?.taskName }}</p>
+    <p><strong>Start Time:</strong> {{ data.task?.startTime }}</p>
+    <p><strong>End Time:</strong> {{ data.task?.endTime }}</p>
+    <p><strong>Status:</strong> {{ data.task?.status }}</p>
+    <p><strong>Description:</strong> {{ data.task?.description }}</p>
+    <p><strong>Task type:</strong> {{ data.task?.frequency }}</p>
+  
+    <!-- If you want to show recurring days of the week -->
+    <!-- <p *ngIf="isRecurringWeekly(data.task)"> -->
+    <!--   <strong>Recurring:</strong> {{ getRecurringDaysOfWeek(data.task) }} -->
+    <!-- </p> -->
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+  

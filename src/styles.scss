@@ -12,6 +12,8 @@ body {
 
 .sidenav_component .mat-sidenav {
     width: 256px !important;
+    // width: 300px !important;
+
 }
 
 .main_view {
@@ -42,4 +44,40 @@ body {
 }
 .weekly_dialog_panel_class .weekly_dialogs_inputs{
     padding: 16px;
+}
+
+.fc .fc-daygrid-day-number {
+    text-decoration: none !important;
+    color: black;
+}
+
+.fc .fc-col-header-cell-cushion {
+    text-decoration: none !important;
+    color: black;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0px;
+}
+.fc .fc-toolbar-title {
+    font-size: 1.75em;
+    margin: 16px;
+}
+.fc-toolbar-chunk {
+    margin-right: 16px;
+}
+.calendar {
+    width: 100%;
+    aspect-ratio: 1.6; /* 16:10 aspect ratio */
+    height: 100vh;
+  }
+  @media (max-width: 600px) {
+    .calendar {
+      height: auto; /* Reset height to auto for smaller screens */
+    }
+    .fc-direction-ltr {
+        direction: ltr;
+        text-align: left;
+        height: 100vh;
+    }
 }

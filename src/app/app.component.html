@@ -1,2 +1,30 @@
 <!-- This is the base component -->
-<app-side-bar></app-side-bar>
+<mat-toolbar>
+    <span>Task Scheduler</span>
+    <span class="example-spacer"></span>
+    <div class="search_task">
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Search Task</mat-label>
+          <input type="text"
+                 placeholder="Search task"
+                 aria-label="Search Task"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions" [value]="option.taskName" (onSelectionChange)="openTaskDetails(option)">
+              {{option.taskName}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+  </mat-toolbar>
+
+<!-- <app-sign-up *ngIf="shouldShowSignUp()"></app-sign-up> -->
+<!-- <app-sign-in *ngIf="shouldShowSignIn()"></app-sign-in> -->
+<app-side-bar *ngIf="shouldShowSidebar()"></app-side-bar>
