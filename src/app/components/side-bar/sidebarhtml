@@ -1,0 +1,36 @@
+<div class="sidenav_component">
+  <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #sidenav mode="side" opened>
+        <div class="h_100">
+          <mat-icon class="close_nav" (click)="closeSideNav()">clear</mat-icon>
+          <div *ngIf="todaysTasks.length > 0">
+            <h1 class="task_title">Today's Task</h1>
+          </div>
+          <h4 class="date_text mt-4">{{ currentDate | date: 'd MMMM yyyy' }}</h4>
+          <div class="add_task">
+            <button [routerLink]="'/main-view/task-form'" mat-raised-button color="primary" class="add-task-button">Add Task</button>
+          </div>
+          <div *ngIf="todaysTasks && todaysTasks.length > 0">
+            <h1 class="task_title">Today's Task</h1>
+          </div>
+          
+          <!-- Empty State -->
+          <div *ngIf="todaysTasks && todaysTasks.length === 0">
+            <h4 class="text-center no_task">You don't have any task</h4>
+          </div>
+          
+          <!-- Task List -->
+          <div class="list_items">
+            <div *ngFor="let task of todaysTasks" class="list_items_inner">
+              <p class="task_font"> - {{ task.taskName }} </p>
+              <hr />
+            </div>          
+          </div>
+          
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

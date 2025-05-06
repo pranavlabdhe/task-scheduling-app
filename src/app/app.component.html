@@ -1,5 +1,5 @@
 <!-- This is the base component -->
-<mat-toolbar>
+<!-- <mat-toolbar>
     <span>Task Scheduler</span>
     <span class="example-spacer"></span>
     <div class="search_task">
@@ -20,11 +20,50 @@
         </mat-form-field>
       </form>
     </div>
-    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  </mat-toolbar> -->
+
+<mat-toolbar class="toolbar">
+
+ <a [routerLink]="'/main-view/tasks'" class="rmv_underline">
+  <span class="toolbar-title">Task Scheduler</span>
+</a>
+    <div class="search_task">
+        <form class="example-form">
+            <!-- <mat-form-field class="example-full-width mt-2" appearance="outline">
+                <input type="text"
+                    placeholder="Search task"
+                    aria-label="Search Task"
+                    matInput
+                    [formControl]="myControl"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions" [value]="option.taskName" (onSelectionChange)="openTaskDetails(option)">
+                        {{option.taskName}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field> -->
+
+            <!-- <mat-form-field class="example-full-width mt-2" appearance="outline">
+              <input type="text"
+                  placeholder="Search task"
+                  aria-label="Search Task"
+                  matInput
+                  [formControl]="myControl"
+                  [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions" [value]="option.taskName" (onSelectionChange)="openTaskDetails(option)">
+                      {{option.taskName}}
+                  </mat-option>
+              </mat-autocomplete>
+          </mat-form-field> -->
+          
+        </form>
+    </div>
+</mat-toolbar>
+
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>
     </button> -->
-  </mat-toolbar>
-
 <!-- <app-sign-up *ngIf="shouldShowSignUp()"></app-sign-up> -->
 <!-- <app-sign-in *ngIf="shouldShowSignIn()"></app-sign-in> -->
 <app-side-bar *ngIf="shouldShowSidebar()"></app-side-bar>

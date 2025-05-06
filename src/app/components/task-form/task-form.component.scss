@@ -1,3 +1,4 @@
+
 .task_form {
     display: flex;
     width: 100%;
@@ -5,6 +6,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 24px;
+    font-family: 'Segoe UI' !important;
     // height: 70vh;
 }
 .add-task-button {
@@ -12,6 +14,12 @@
 }
 .add_task_title {
     font-weight: bold;
+    font-family: 'Segoe UI' !important;
+    color: #34495e;
+    font-size: 16px;
+}
+.one_field{
+    font-family: 'Segoe UI' !important;
 }
 .margin_top {
   margin-top: 16px;  

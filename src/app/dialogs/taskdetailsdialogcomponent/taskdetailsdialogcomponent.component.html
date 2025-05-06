@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div mat-dialog-content>
+  <div mat-dialog-content class="dialog_bg one_field">
     <p><strong>Name:</strong> {{ task.taskName }}</p>
     <p><strong>Start Time:</strong> {{ task.startTime }}</p>
     <p><strong>End Time:</strong> {{ task.endTime }}</p>
@@ -23,7 +23,7 @@
 
     <p *ngIf="isRecurringWeekly()"><strong>Recurring:</strong> {{ getRecurringDaysOfWeek() }}</p>
   </div>
-  <div mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Close</button>
+  <div mat-dialog-actions class="dialog_bg one_field"   align="end">
+    <button class="add-task-button " mat-button mat-dialog-close>Close</button>
   </div>
   

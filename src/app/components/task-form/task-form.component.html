@@ -16,10 +16,10 @@
           </div>
           <div>
             <mat-form-field class="margin_left one_field" >
-              <mat-select formControlName="frequency" placeholder="Frequency">
-                <mat-option value="hourly">Hourly</mat-option>
-                <mat-option value="daily">Daily</mat-option>
-                <mat-option value="weekly">Weekly</mat-option>
+              <mat-select formControlName="frequency" class="one_field"  placeholder="Frequency">
+                <mat-option class="one_field" value="hourly">Hourly</mat-option>
+                <mat-option class="one_field" value="daily">Daily</mat-option>
+                <mat-option class="one_field" value="weekly">Weekly</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -28,9 +28,9 @@
       <div class="child_2_child"  class="one_field_parent">
         <div *ngIf="taskForm.get('frequency')?.value === 'hourly'" class="one_field">
           <mat-form-field appearance="fill" class="one_field">
-            <mat-label>Choose start date</mat-label>
+            <mat-label class="one_field" >Choose start date</mat-label>
             <input matInput formControlName="startDate" [matDatepicker]="picker">
-            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-hint class="one_field" >DD/MM/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -39,7 +39,7 @@
           <mat-form-field appearance="fill" class="one_field">
             <mat-label>Choose start date</mat-label>
             <input matInput formControlName="startDate" [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-hint >MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -98,9 +98,9 @@
       </div>
       <div class="one_field_parent">
         <mat-form-field class="margin_left one_field" >
-          <mat-select formControlName="status" placeholder="Status">
-            <mat-option value="todo">Todo</mat-option>
-            <mat-option value="in-progress">In-Progress</mat-option>
+          <mat-select formControlName="status" class="one_field"  placeholder="Status">
+            <mat-option class="one_field"  value="todo">Todo</mat-option>
+            <mat-option class="one_field"  value="in-progress">In-Progress</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -110,16 +110,16 @@
       </div>
     </div>
       <div class="margin_top">
-        <button mat-raised-button class="add-task-button" color="primary" type="submit">Add</button>
+        <button mat-raised-button class="add-task-button one_field text-bold" color="primary" type="submit">Add</button>
       </div>
     </div>
   </form>
   
   </div>
  
-  <p>should appear when edit icon is clicked</p>
+  <!-- <p>should appear when edit icon is clicked</p> -->
 
 
-<div class="child_3">
+<!-- <div class="child_3">
 <app-task-detail></app-task-detail>
-</div>
+</div> -->

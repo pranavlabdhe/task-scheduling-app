@@ -1,81 +1,236 @@
-.mat_list_class {
-    height: 100vh;
-}
-.task_font {
-    font-weight: bold;
-    font-size: 21px;
-    margin: 24px 0 12px 9px;
-}
-.cursor-pointer {
-    cursor: pointer;
-  }
-.action_button {
-    position: relative;
-    right: 10px
-}
-.ml {
-    margin-left: 8px;
-}
-.h_100 {
-    height: 97vh;
-    position: relative;
-}
-.list_items {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 16px;
-    align-items: start;
-    flex-direction: column;
-}
-.task_title {
-    text-align: center;
-    margin-top: 16px;
-}
-.add_task {
-    display: flex;
-    justify-content: center;
-}
-.close_nav {
-    display: none;
-}
-.list_items_inner {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    border-bottom: 1px solid grey;
-    width: 100%;
-}
-@media screen and (max-width:420px) {
-    .h_100 {
-        height: 97vh;
-        position: relative;
-    }
-    .close_nav {
-        position: absolute;
-        right: 9px;
-        cursor: pointer;
-        display: block;
-    }
-}
-@media screen and (max-width:960px) {
-    .h_100 {
-        height: 97vh;
-        position: relative;
-    }
-    .close_nav {
-        position: absolute;
-        right: 9px;
-        cursor: pointer;
-        display: block;
-    }
-}
-.date_text {
-    text-align: center;
-}
+// .mat_list_class {
+//     height: 100vh;
+// }
+// .task_font {
+//     font-weight: bold;
+//     font-size: 21px;
+//     margin: 24px 0 12px 9px;
+// }
+// .cursor-pointer {
+//     cursor: pointer;
+//   }
+// .action_button {
+//     position: relative;
+//     right: 10px
+// }
+// .ml {
+//     margin-left: 8px;
+// }
+// .h_100 {
+//     height: 97vh;
+//     position: relative;
+// }
+// .list_items {
+//     display: flex;
+//     width: 100%;
+//     justify-content: space-between;
+//     margin-top: 16px;
+//     align-items: start;
+//     flex-direction: column;
+// }
+// .task_title {
+//     text-align: center;
+//     margin-top: 16px;
+// }
+// .add_task {
+//     display: flex;
+//     justify-content: center;
+// }
+// .close_nav {
+//     display: none;
+// }
+// .list_items_inner {
+//     display: flex;
+//     align-items: center;
+//     gap: 24px;
+//     border-bottom: 1px solid grey;
+//     width: 100%;
+// }
+// @media screen and (max-width:420px) {
+//     .h_100 {
+//         height: 97vh;
+//         position: relative;
+//     }
+//     .close_nav {
+//         position: absolute;
+//         right: 9px;
+//         cursor: pointer;
+//         display: block;
+//     }
+// }
+// @media screen and (max-width:960px) {
+//     .h_100 {
+//         height: 97vh;
+//         position: relative;
+//     }
+//     .close_nav {
+//         position: absolute;
+//         right: 9px;
+//         cursor: pointer;
+//         display: block;
+//     }
+// }
+// .date_text {
+//     text-align: center;
+// }
 
-// close_nav
-.no_task {
+// // close_nav
+// .no_task {
+//     text-align: center;
+//     margin-top: 26px;
+// }
+/* Sidebar Styles */
+/* Sidebar Styles */
+mat-sidenav {
+    background: linear-gradient(45deg, #2c3e50, #34495e, #2980b9, #f39c12);
+    background-size: 400% 400%;
+    animation: gradientAnimation 2s ease infinite; /* Changed to 5s for faster animation */
+    color: #fff;
+    width: 280px;
+    padding: 20px 0px 20px 16px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Gradient Animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* When sidebar is hovered, increase width slightly */
+  mat-sidenav:hover {
+    width: 300px;
+  }
+  
+  /* Styling the Task Section */
+  .h_100 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Title styles */
+  .task_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f39c12;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'Segoe UI' !important;
+  }
+  
+  /* Date text style */
+  .date_text {
+    font-size: 1rem;
+    color: #bdc3c7;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  /* Add Task Button */
+  .add_task {
+    margin-top: 20px;
     text-align: center;
-    margin-top: 26px;
-}
+  }
+  
+  .add-task-button {
+    background-color: #f39c12;
+    color: #34495e;
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .white_color {
+    color: white;
+  }
+  
+  .add-task-button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+  }
+  
+  /* Empty state */
+  .no_task {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    font-style: italic;
+    word-break: break-all;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  /* Task List */
+  .list_items {
+    margin-top: 20px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    word-wrap: break-word; /* This ensures long words are wrapped */
+    white-space: normal; /* Ensures text breaks properly instead of overflowing */
+    overflow: hidden; /* Hides anything that overflows */
+  }
+  
+  .list_items_inner {
+    padding: 20px 20px 20px 0px;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .list_items_inner:hover {
+    transform: translateX(10px);
+  }
+  
+  /* Task Font Styling */
+  .task_font {
+    font-size: 12px;
+    color: #ecf0f1;
+    margin-left: 20px;
+    font-weight: bold;
+    opacity: 0;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1.5px solid white;
+    margin-top: 10px;
+  }
+  
+  /* Animation for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Additional Styles for task and hover effects */
+  .list_items_inner {
+    background-color: #34495e;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .list_items_inner:hover {
+    background-color: #2980b9;
+    transform: translateX(10px);
+  }
+  
