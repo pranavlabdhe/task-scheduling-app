@@ -235,3 +235,443 @@ mat-sidenav {
     
   }
   
+// mat-sidenav {
+//     background: linear-gradient(45deg, #2c3e50, #34495e, #2980b9, #f39c12);
+//     background-size: 400% 400%;
+//     animation: gradientAnimation 2s ease infinite; /* Changed to 5s for faster animation */
+//     color: #fff;
+//     width: 280px;
+//     padding: 20px 0px 20px 16px;
+//     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+//     transition: width 0.3s ease, background-color 0.3s ease;
+//   }
+  
+//   /* Gradient Animation */
+//   @keyframes gradientAnimation {
+//     0% {
+//       background-position: 0% 50%;
+//     }
+//     50% {
+//       background-position: 100% 50%;
+//     }
+//     100% {
+//       background-position: 0% 50%;
+//     }
+//   }
+  
+//   /* When sidebar is hovered, increase width slightly */
+//   mat-sidenav:hover {
+//     width: 300px;
+//   }
+  
+//   /* Styling the Task Section */
+//   .h_100 {
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   /* Title styles */
+//   .task_title {
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//     color: #f39c12;
+//     margin-bottom: 10px;
+//     text-transform: uppercase;
+//     animation: fadeIn 1s ease-in-out;
+//     font-family: 'Segoe UI' !important;
+//   }
+  
+//   /* Date text style */
+//   .date_text {
+//     font-size: 1rem;
+//     color: #bdc3c7;
+//     margin-top: 10px;
+//     opacity: 0;
+//     animation: fadeIn 1.5s ease-in-out forwards;
+//   }
+  
+//   /* Add Task Button */
+//   .add_task {
+//     margin-top: 20px;
+//     text-align: center;
+//   }
+  
+//   .add-task-button {
+//     background-color: #f39c12;
+//     color: #34495e;
+//     font-size: 1rem;
+//     padding: 10px 20px;
+//     font-weight: bold;
+//     border-radius: 5px;
+//     border: none;
+//     transition: background-color 0.3s ease, transform 0.3s ease;
+//   }
+//   .white_color {
+//     color: white;
+//   }
+  
+//   .add-task-button:hover {
+//     background-color: #e67e22;
+//     transform: scale(1.05);
+//   }
+  
+//   /* Empty state */
+//   .no_task {
+//     font-size: 1.2rem;
+//     color: #ecf0f1;
+//     font-style: italic;
+//     word-break: break-all;
+//     margin-top: 20px;
+//     animation: fadeIn 2s ease-in-out forwards;
+//   }
+  
+//   /* Task List */
+//   .list_items {
+//     margin-top: 20px;
+//     max-height: calc(100vh - 250px);
+//     overflow-y: auto;
+//     text-transform: uppercase;
+//     cursor: pointer;
+//     word-wrap: break-word; /* This ensures long words are wrapped */
+//     white-space: normal; /* Ensures text breaks properly instead of overflowing */
+//     overflow: hidden; /* Hides anything that overflows */
+//   }
+  
+//   .list_items_inner {
+//     padding: 20px 20px 20px 0px;
+//     margin: 10px 0;
+//     transition: transform 0.3s ease;
+//   }
+  
+//   .list_items_inner:hover {
+//     transform: translateX(10px);
+//   }
+  
+//   /* Task Font Styling */
+//   .task_font {
+//     font-size: 12px;
+//     color: #ecf0f1;
+//     margin-left: 20px;
+//     font-weight: bold;
+//     opacity: 0;
+//     letter-spacing: 1.5px;
+//     text-transform: capitalize;
+//     animation: fadeIn 2s ease-in-out forwards;
+//   }
+  
+//   hr {
+//     border: 0;
+//     border-top: 1.5px solid white;
+//     margin-top: 10px;
+//   }
+  
+//   /* Animation for fade-in effect */
+//   @keyframes fadeIn {
+//     0% {
+//       opacity: 1;
+//     }
+//     100% {
+//       opacity: 1;
+//     }
+//   }
+  
+//   /* Additional Styles for task and hover effects */
+//   .list_items_inner {
+//     background-color: #34495e;
+//     border-radius: 5px;
+//     margin-bottom: 10px;
+//   }
+  
+//   .list_items_inner:hover {
+//     background-color: #2980b9;
+//    transform: translateX(10px);
+    
+//   }
+  
+//   .today_task {
+//     font-family: 'Segoe UI';
+//   }
+
+
+//   .sidenav_component {
+//     .list_items {
+//       .task_wrapper {
+//         position: relative;
+  
+//         .custom-dropdown {
+//           position: absolute;
+//           top: -5px;
+//           right: 0px;
+//           z-index: 2;
+  
+//           select {
+//             padding: 4px 8px;
+//             font-size: 13px;
+//             border-radius: 4px;
+//             border: 1px solid #ccc;
+//             background-color: white;
+//             cursor: pointer;
+//           }
+//         }
+  
+//         .list_items_inner {
+//           padding: 10px;
+//           margin: 25px 0 10px 0;
+//           border: 1px solid #ccc;
+//           border-radius: 5px;
+//           cursor: pointer;
+//           position: relative;
+  
+//           &.in-progress-task {
+//             background-color: #fd7e14;
+//           }
+  
+//           &.done-task {
+//             background-color: #28a745;
+
+//           }
+  
+//           &.todo-task {
+//             background-color: #6c757d;
+//           }
+//         }
+//       }
+//     }
+  
+//     .task-status-dropdown {
+//       margin-left: 10px;
+//       min-width: 150px;
+//     }
+//   }
+  
+
+
+
+mat-sidenav {
+  background: linear-gradient(45deg, #2c3e50, #34495e, #2980b9, #f39c12);
+  background-size: 400% 400%;
+  animation: gradientAnimation 2s ease infinite; /* Changed to 5s for faster animation */
+  color: #fff;
+  width: 280px;
+  padding: 20px 0px 20px 16px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* When sidebar is hovered, increase width slightly */
+mat-sidenav:hover {
+  width: 300px;
+}
+
+/* Styling the Task Section */
+.h_100 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title styles */
+.task_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f39c12;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  animation: fadeIn 1s ease-in-out;
+  font-family: 'Segoe UI' !important;
+}
+
+/* Date text style */
+.date_text {
+  font-size: 1rem;
+  color: #bdc3c7;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Add Task Button */
+.add_task {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.add-task-button {
+  background-color: #f39c12;
+  color: #34495e;
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.white_color {
+  color: white;
+}
+
+.add-task-button:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+}
+
+/* Empty state */
+.no_task {
+  font-size: 1.2rem;
+  color: #ecf0f1;
+  font-style: italic;
+  word-break: break-all;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Task List */
+.list_items {
+  margin-top: 20px;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  word-wrap: break-word; /* This ensures long words are wrapped */
+  white-space: normal; /* Ensures text breaks properly instead of overflowing */
+  overflow: hidden; /* Hides anything that overflows */
+}
+
+.list_items_inner {
+  padding: 20px 20px 20px 0px;
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.list_items_inner:hover {
+  transform: translateX(10px);
+}
+
+/* Task Font Styling */
+.task_font {
+  font-size: 12px;
+  color: #ecf0f1;
+  margin-left: 20px;
+  font-weight: bold;
+  opacity: 0;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+hr {
+  border: 0;
+  border-top: 1.5px solid white;
+  margin-top: 10px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Additional Styles for task and hover effects */
+.list_items_inner {
+  background-color: #34495e;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.list_items_inner:hover {
+  background-color: #2980b9;
+  transform: translateX(10px);
+}
+
+.today_task {
+  font-family: 'Segoe UI';
+}
+
+/* Custom Dropdown */
+.sidenav_component {
+  .list_items {
+    .task_wrapper {
+      position: relative;
+
+      .custom-dropdown {
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        z-index: 2;
+
+        select {
+          padding: 4px 8px;
+          font-size: 13px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background-color: white;
+          cursor: pointer;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+        }
+      }
+
+      .list_items_inner {
+        padding: 10px;
+        margin: 25px 0 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+
+        &.in-progress-task {
+          background-color: #fd7e14;
+        }
+
+        &.done-task {
+          background-color: #28a745;
+        }
+
+        &.todo-task {
+          background-color: #6c757d;
+        }
+      }
+    }
+  }
+
+  .task-status-dropdown {
+    margin-left: 10px;
+    min-width: 150px;
+  }
+}
+
+/* Remove blue outline when the select is focused */
+.custom-dropdown select:focus {
+  outline: none;
+  border-color: #28a745; /* Green border on focus */
+}
+
+/* Styling the select dropdown arrow */
+.custom-dropdown select::after {
+  content: '▼'; /* Custom dropdown arrow */
+  position: absolute;
+  right: 10px; /* Position it on the right */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333; /* Arrow color */
+}

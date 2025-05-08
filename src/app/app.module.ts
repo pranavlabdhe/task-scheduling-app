@@ -40,6 +40,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { SearchedTaskDetailsComponent } from './dialogs/searched-task-details/searched-task-details.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { OrdinalDatePipe } from './Pipe/ordinal-date.pipe';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     SearchedTaskDetailsComponent,
     SignInComponent,
     SignUpComponent,
+    OrdinalDatePipe
   ],
   imports: [
     BrowserModule,
